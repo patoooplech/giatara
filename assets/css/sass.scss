@@ -1,0 +1,9 @@
+$farba-zelena: green;
+$farba-modra: yellow;
+.x {
+	background-color: $farba-zelena;
+	color: $farba-modra;
+    border: 5px solid $farba-modra;
+    padding: 15px;
+    margin: 20px;
+}
