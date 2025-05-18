@@ -1,0 +1,668 @@
+/* Base Styles & Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.pa {
+    font-size: 130%
+}
+
+/* Body & Background */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("pozadie/pozadie.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+    /* for sticky nav */
+}
+
+/* Sticky Navbar */
+.sticky-nav {
+    position: fixed;
+    top: 0;
+    width: 101%;
+    z-index: 1030;
+    background-color: rgba(0, 0, 0, 1);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    right: -1%;
+
+}
+
+/* Content Container */
+.content-container {
+    width: 90%;
+    max-width: 1200px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    margin: 20px auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    width: 100%;
+    color: black;
+}
+
+/* Main Layout */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 5%;
+    margin: 5%;
+}
+
+/* Aside and Article */
+aside,
+article {
+    background-color: white;
+    padding: 10%;
+    border-radius: 2%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
+
+
+
+aside {
+    flex: 1 1 60%;
+}
+
+article {
+    flex: 1 1 27%;
+    margin:10px;
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Zvislé zarovnanie obsahu */
+    width: 115%; /* Celá šírka okna */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    margin-top: 3%;
+    border-radius: 0; /* odporúčanie: na 100% šírke je lepšie bez zaoblenia */
+    text-align: center;
+    position:relative;
+    left:-6%
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Hover efekt */
+footer a:hover {
+    color: #cccccc; /* Svetlosivá */
+}
+
+/* Aktívny odkaz */
+footer a:active {
+    color: #999999; /* Tmavšia sivá */
+}
+
+
+/* Images & Media */
+img {
+    transition: transform 0.3s ease, border-radius 0.3s ease;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10%;
+    margin:10px
+}
+
+img:hover {
+    transform: scale(1.05);
+    border-radius: 5%;
+}
+
+.logo {
+    height: 20%;
+    width: auto;
+    z-index: 100;
+    top: 80%;
+    left: 85%;
+    border-radius: 25%
+}
+
+.ja {
+    float: left;
+    left: 10%;
+    max-height: 200px;
+}
+
+.gitara3 {
+    display: block;
+    margin: 20px auto;
+    max-height: 200px;
+}
+
+.novinky,
+.novinky1 {
+    max-height: 350px;
+    margin: 10px 0;
+    max-width: 350px;
+}
+
+
+
+.auto {
+    width: 90px;
+    margin-left: 50px;
+}
+
+.mobil {
+    height: 30px;
+    width: 30px;
+    vertical-align: middle;
+}
+
+/* Hlavný kontajner */
+.carousel-item {
+    transition: transform 0.6s ease-in-out;
+}
+
+.carousel-item img {
+    max-height: 400px;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* Základný štýl pre carousel */
+.carousel {
+    position: relative;
+}
+
+/* Animácia pre prechod */
+.carousel-item {
+    transition: opacity 0.6s ease;
+    opacity: 0;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+
+/* Indikátory - finálna verzia */
+.carousel-indicators {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    z-index: 2;
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+    opacity: 0.7;
+}
+
+.carousel-indicators [data-bs-target]:hover {
+    opacity: 1;
+}
+
+.carousel-indicators .active {
+    background-color: #ffffff;
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Obrázky v carousele */
+.carousel-item img {
+    max-height: 400px;
+    width: 100%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Popisky */
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    padding: 12px;
+    bottom: 60px;
+}
+
+/* Jemná animácia */
+.carousel-item {
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+    display: flex;
+}
+
+.carousel-item-next:not(.carousel-item-start),
+.active.carousel-item-end {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.carousel-item-prev:not(.carousel-item-end),
+.active.carousel-item-start {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid black;
+    background-color: white;
+}
+
+th,
+td {
+    border: 2px solid white;
+    padding: 8px;
+    text-align: left;
+}
+
+.stred {
+    text-align: center;
+}
+
+/* Helpers */
+.fix {
+    position: sticky;
+    top: 20px;
+}
+
+.dole {
+    position: relative;
+    top: 9px;
+}
+
+.dole2 {
+    position: relative;
+    top: 9px;
+    left: -40px;
+}
+
+.sidebar2 {
+    position: relative;
+    left: 4px;
+}
+
+.section-container {
+    width: 120%;
+    position: absolute;
+    right: -10%;
+    bottom: -52%;
+}
+
+
+.volne {
+    box-sizing: border-box;
+    height: 5%
+}
+
+/* Custom styles for the menu dropdown */
+/* Custom styles for the menu dropdown */
+.menu-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-link {
+    cursor: pointer;
+    padding: 8px 15px;
+    color: rgba(255, 255, 255, 0.75);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.menu-link:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.menu-link::after {
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+    transition: transform 0.3s ease;
+}
+
+.menu-dropdown.show .menu-link::after {
+    transform: rotate(-180deg);
+}
+
+.custom-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    min-width: 10rem;
+    padding: 0.5rem 0;
+    margin: 0.125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .175);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu-dropdown.show .custom-dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.custom-dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 0.25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+    transition: background-color 0.3s ease;
+}
+
+.custom-dropdown-item:hover {
+    color: #16181b;
+    text-decoration: none;
+    background-color: #f8f9fa;
+}
+
+/* Pridajte tento štýl do vašej CSS časti */
+.custom-dropdown-item.active {
+    font-weight: bold !important;
+    background-color: #d3d7dc !important;
+}
+
+.gallery-img {
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin: 10px 0;
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #dee2e6;
+}
+
+.gallery-img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-img {
+    max-height: 80vh;
+    width: auto;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+    max-width:200px;
+}
+
+.news-item {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    max-width:200px;
+}
+
+.news-item strong {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.bodybackground {
+    box-sizing: border-box;
+    width: 90%;
+    height: 90%;
+    background: rgba(255, 255, 255, 0.7);
+
+}
+
+/* Breakpoint*/
+@media (max-width: 1200px) {
+    main {
+        gap: 3%;
+        margin: 3%;
+    }
+
+    aside {
+        flex: 1 1 58%;
+    }
+
+    article {
+        flex: 1 1 35%;
+        font-size: 1.2rem;
+    }
+
+    .content-container {
+        width: 95%;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Breakpoint 2: max-width 768px */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        margin: 20px 5%;
+    }
+
+    aside,
+    article {
+        flex: 1 1 100%;
+        margin-bottom: 20px;
+        padding: 5%;
+    }
+
+    .sticky-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .logo {
+        left:5%;
+    }
+
+    .carousel-caption {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}
+
+/* Breakpoint 3: max-width 480px */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .content-container {
+        padding: 10px;
+    }
+
+    .carousel-item img {
+        max-height: 250px;
+    }
+
+    .menu-link {
+        padding: 5px 10px;
+        font-size: 0.9rem;
+    }
+
+    .custom-dropdown-menu {
+        min-width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .modal-img {
+        max-height: 60vh;
+    }
+
+    .gallery-container,
+    .news-item {
+        max-width: 100%;
+    }
+ 
+
+    aside,
+    article {
+        padding: 5%;
+    }
+    .logo{
+        left: 80%;
+        width:20%;
+        height:auto;
+        bottom:0%;
+    }
+}
+@media (min-width: 1800px) {
+    article {
+        font-size: 1.4rem;
+    }
+    main{
+        font-size: 1.6rem
+    }
+    h1{
+        font-size:4rem
+    }
+    h2{
+        font-size:3rem;
+    }
+    h3{
+        font-size:2rem;
+    }
+ 
+    article,img{ width:250%;
+    height:auto;}
+    
+    .logo{
+        right:2%
+    }
+}
+/* Nový layout pre hlavný blok */
+.main-layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  margin: 40px auto;
+  max-width: 1200px;
+  width: 95%;
+}
+
+/* Grid pre obrázky a videá */
+.media-grid section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.media-item {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.media-item:hover {
+  transform: scale(1.03);
+}
+
+/* Panel pre novinky */
+.news-panel {
+  flex: 1 1 300px;
+  max-width: 350px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.news-panel h3 {
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  color: #333;
+}
+.required-field::after {
+    content: " *";
+    color: red;
+}
